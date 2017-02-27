@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.generator').on('click', createGroups)
 });
-
+//Array of Students
 var students = [
         "Dave Thomas",
         "Steve Jobs",
@@ -22,7 +22,8 @@ var students = [
         "Toby Matthews",
         "Frank Palicky",
         "Colene Rector",
-        "Benji that Dog"
+        "Benji that Dog",
+        "BritneyJo Ludkowski"
         ];
 
 function createGroups(){
@@ -45,26 +46,15 @@ function groupSplit() {
     .filter(function(item){ return item;
   });
   console.log("The groups: ", groups);
-
   displayGroups(groups);
 }
 
 function displayGroups(groups) {
   for (i = 0; i < groups.length; i++) {
-
     var groupNumber= i+1
     console.log('groupNumber', groupNumber);
     $('#groupPanel').append("<div class='col-lg-4 col-md-6 groupBox' id='"+groupNumber+"'><div class='grouptitle'>Group "+groupNumber+"</div></div><hr />");
     _.map(groups[i], function(name){
-      // if (groups[i].length < 3){
-      //   console.log('hello 2');
-      //   add1 = groups[i].splice(0,1)
-      //   add2 = groups[i].splice(1,2)
-      //   groups[0].push(add1[0])
-      //   groups[1].push(add1[1])
-      //   console.log('group 1', groups[0]);
-      //   console.log('group!', add1);
-      // }
       $("#"+groupNumber).append('<p>'+name+'</p>')
       console.log('name', name)
     });
