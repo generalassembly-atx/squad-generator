@@ -1,7 +1,64 @@
+@font-face {
+    font-family: "CircularStd";
+    src: url(./CircularStd-Bold.otf) format("truetype");
+}
+
 .groupBox {
     width: 300px;
-    height: 100px;
+    height: 145px;
     box-shadow: 10px 10px 5px #888888;
     margin: 15px;
     text-align: center;
+}
+h1 {
+  color: white;
+  font-family: 'CircularStd';
+  font-size: 64px;
+  margin-top: 60px;
+}
+
+.generator {
+  position: relative;
+  left: 40%;
+  font-family: 'CircularStd';
+  font-size: 40px;
+  width: 230px;
+  background-color: white;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.groupBox {
+  background-color: white;
+  font-family: 'CircularStd';
+}
+
+.grouptitle {
+  font-size: 30px;
+  border-style: solid;
+  border-bottom: thick solid black;
+  margin-bottom: 10px;
+  width: 111%;
+  position: relative;
+  left: -15px;
+}
+
+.title{
+  position: relative;
+  down: 40px;
+}
+
+
+
+p {
+  color: black;
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+}
+
+body {
+  background-color: black;
 }
