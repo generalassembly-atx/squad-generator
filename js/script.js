@@ -3,27 +3,29 @@ $(document).ready(function(){
 });
 //Array of Students
 var students = [
-        "Dave Thomas",
-        "Steve Jobs",
-        "Kollin Brandenburg",
-        "Dirk Dunn",
-        "Mike Dang",
-        "Thomas Foster",
-        "Homer Simpson",
-        "Bart Simpson",
-        "Peter Griffin",
-        "Brian Griffin",
-        "Chris Griffin",
-        "Rich Sanchez",
-        "Morty Smith",
-        "Bird Person",
-        "Mr. Goldenfold",
-        "Coach Feratu",
-        "Toby Matthews",
-        "Frank Palicky",
-        "Colene Rector",
-        "Benji that Dog",
-        "BritneyJo Ludkowski"
+  "Charles Orlando",
+  "Juliana Michelsen",
+  "Ronak Singh",
+  "Andrew	Chan",
+  "Erik	Morales",
+  "Matthew Tan",
+  "Daniel	Doherty",
+  "Christopher Jauregui",
+  "Jon Franchi",
+  "Sam Collette",
+  "Peter Weyand",
+  "Salman	Rana",
+  "Matthew Heck",
+  "Melissa Pringle",
+  "Tanya Selvog",
+  "Sarah Goldgar",
+  "Jorge Cano",
+  "Barbara Boutette",
+  "Robert Saunders",
+  "Komal Jadvani",
+  "Jacob Bodkin",
+  "Remington Griffin",
+  "Rene	Sanchez"
         ];
 
 function createGroups(){
@@ -50,13 +52,26 @@ function groupSplit() {
 }
 
 function displayGroups(groups) {
-  for (i = 0; i < groups.length; i++) {
+  for (i = groups.length-1; i < groups.length; i--) {
     var groupNumber= i+1
-    console.log('groupNumber', groupNumber);
-    $('#groupPanel').append("<div class='col-lg-4 col-md-6 groupBox' id='"+groupNumber+"'><div class='grouptitle'>Group "+groupNumber+"</div></div><hr />");
-    _.map(groups[i], function(name){
-      $("#"+groupNumber).append('<p>'+name+'</p>')
-      console.log('name', name)
-    });
+    console.log('group length: ', groups[i].length);
+    if (groups[i].length < 3){
+      console.log('This is not full');
+      var person1 = groups[i][0]
+      groups[0].push(person1)
+      // console.log('Group 1', groups[0]);
+      var person2 = groups[i][1]
+      groups[1].push(person2)
+      // console.log('Group 2', groups[1]);
+    } else {
+      // console.log('This group IS full');
+      $('#groupPanel').prepend("<div class='col-lg-4 col-md-6 groupBox' id='"+groupNumber+"'><div class='grouptitle'>Group "+groupNumber+"</div></div><hr />");
+      _.map(groups[i], function(name){
+        $("#"+groupNumber).append('<p>'+name+'</p>')
+        console.log('name', name)
+      });
+    }
+
+
   }
 }
