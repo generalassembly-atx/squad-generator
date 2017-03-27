@@ -1,1 +1,2 @@
 # WDI-SquadSort
+# squad-generator
